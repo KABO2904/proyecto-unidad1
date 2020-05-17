@@ -1,5 +1,9 @@
 #include <windows.h>
 #include "uframework.h"
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 int main()
 {initialize("Ejemplo uFramework", 800, 600, false);
