@@ -1,0 +1,16 @@
+
+Agregar en :
+Settings -> Compiler -> Linker Settings -> Other Linker Options 
+Valor :
+-lMicroFramework
+
+Agregar en :
+Settings -> Compiler -> Search Directories -> Compiler 
+Valor :
+[MicroFramework Folder] /include 
+
+Agregar en :
+Settings -> Compiler -> Search Directories -> Linker
+Valor :
+[MicroFramework Folder] /lib
+
