@@ -15,6 +15,29 @@ create_sprite("s_player3", 10);
 create_sprite("s_player4", 1);
 create_sprite("s_player5", 10);
 create_sprite("s_player6", 1);
+create_sprite("s_block",1);
+create_sprite("s_block1",1);
+create_sprite("s_block2",1);
+create_sprite("s_block3",1);
+create_sprite("s_background",1);
+
+
+int x_wall;
+int y_wall;
+x_wall=0;
+y_wall=536;
+
+
+
+
+add_frame_to_sprite("s_background","block_07.png");
+
+add_frame_to_sprite("s_block","crate_03.png");
+add_frame_to_sprite("s_block1","crate_15.png");
+add_frame_to_sprite("s_block2","crate_06.png");
+add_frame_to_sprite("s_block3","block_05.png");
+
+{
 
 
 add_frame_to_sprite("s_player0", "player_23.png");
@@ -44,8 +67,26 @@ add_frame_to_sprite("s_player5","player_02.png");
 add_frame_to_sprite("s_player5","player_03.png");
 add_frame_to_sprite("s_player5","player_02.png");
 add_frame_to_sprite("s_player5","player_04.png");
+}
 
-add_indexed_object("o_player", 100, 400, 64, 64, "s_player0");
+
+{add_indexed_object("o_background",-200,0,1200,600,"s_background");
+
+{
+    add_indexed_object("o_player", 370, 20, 64, 64, "s_player0");
+{
+    add_indexed_object("o_crate2",306,144,192,64,"s_block2");
+    add_indexed_object("o_box",370,184,64,64,"s_block1");
+    add_indexed_object("o_crate",50,120,64,64,"s_block");
+    add_indexed_object("o_3",x_wall,y_wall,64,64,"s_block3");
+    if (x_wall=800==false)
+{
+        move_indexed_object_origin("o_3",64,0);
+        x_wall=x_wall+64;
+}
+
+
+
 
 
 int izq;
@@ -56,74 +97,11 @@ int down;
 
 while(!is_window_closed())
 {
-        bool k_left = is_key_pressed("left");
+    bool k_left = is_key_pressed("left");
     bool k_right = is_key_pressed("right");
     bool k_up = is_key_pressed("up");
     bool k_down = is_key_pressed("down");
 
-    if(k_left == true)
-    {
-        set_indexed_object_sprite("o_player","s_player3");
-        move_indexed_object_origin("o_player", -1, 0);
-
-        down==false;
-        der==false;
-        up==false;
-        izq==true;
-    }
-    else if( k_right == true )
-    {
-        set_indexed_object_sprite("o_player", "s_player1");
-        move_indexed_object_origin("o_player", +1, 0);
-        down==false;
-        der==true;
-        up==false;
-        izq==false;
-
-    }
-    if(k_up==true)
-    {
-        set_indexed_object_sprite("o_player","s_player5");
-        move_indexed_object_origin("o_player", 0,-1);
-
-        down==false;
-        der==false;
-        up==true;
-        izq==false;
-    }
-     else if(k_down==true)
-    {
-        set_indexed_object_sprite("o_player","s_player");
-        move_indexed_object_origin("o_player", 0,+1);
-
-        down==true;
-        der==false;
-        up==false;
-        izq==false;
-    }
-
-
-
-    if(k_down&k_right==true)
-    {
-        move_indexed_object_origin("o_player",-1,0);
-    }
-    if(k_down&k_left==true)
-    {
-      move_indexed_object_origin("o_player",+1,0);
-    }
-    if(k_right&k_left==true)
-    {
-        move_indexed_object_origin("o_player",+1,0);
-    }
-     if(k_up&k_right==true)
-    {
-        move_indexed_object_origin("o_player",-1,0);
-    }
-    if(k_up&k_left==true)
-    {
-      move_indexed_object_origin("o_player",+1,0);
-    }
 
 
 
