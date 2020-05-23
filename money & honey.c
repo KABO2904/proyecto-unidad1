@@ -11,7 +11,7 @@
 
 
 int main()
-{initialize("Honey & Money", 800, 600, false);
+{initialize("Money & Honey", 800, 600, false);
 
 
 
@@ -54,6 +54,7 @@ create_sprite("s_obs5",1);
 create_sprite("s_obs6",1);
 create_sprite("s_obs7",1);
 create_sprite("s_obs8",1);
+create_sprite("s_block13",1);
 
 
 
@@ -81,6 +82,7 @@ add_frame_to_sprite("s_block","crate_03.png");
 add_frame_to_sprite("s_block1","crate_15.png");
 add_frame_to_sprite("s_block2","crate_06.png");
 add_frame_to_sprite("s_block3","block_05.png");
+add_frame_to_sprite("s_block13","crate_04.png");
 
 
 
@@ -142,6 +144,7 @@ y_block=144;
     add_indexed_object("o_box",370,184,64,64,"s_block1");
     add_indexed_object("o_crate",x_block,y_block,64,64,"s_block");
     add_indexed_object("o_obs1",590,224,64,64,"s_obs1");
+    add_indexed_object("o_block13",140,144,64,144,"s_block13");
 
 
     //encima de todo
@@ -223,6 +226,79 @@ while(!is_window_closed())
     }
     }
      set_indexed_object_origin("o_player",x_player,y_player);
+
+
+     //colisiones con objetos
+     if((x_player>= 252)&&(x_player<306+184) && (y_player<144+60)&&(y_player+60>144))
+     {
+       x_player=x_player-speed;
+     }
+     if((x_player>= 252)&&(x_player<306+185) && (y_player<144+60)&&(y_player+60>142))
+     {
+       y_player=y_player-speed;
+     }
+     if((x_player>= 252)&&(x_player<306+185) && (y_player<144+62)&&(y_player+60>144))
+     {
+         y_player=y_player+speed;
+     }
+      if((x_player>= 252)&&(x_player<306+185) && (y_player<144+60)&&(y_player+60>144))
+     {
+          x_player=x_player+speed;
+     }
+
+
+      if((x_player>=590-57 )&&(x_player<590+56) && (y_player<144+60+40+40)&&(y_player+60>144))
+     {
+       x_player=x_player-speed;
+     }
+     if((x_player>= 590-57)&&(x_player<590+56) && (y_player<144+60)&&(y_player+60>143))
+     {
+       y_player=y_player-speed;
+     }
+     if((x_player>= 590-57)&&(x_player<590+56) && (y_player<144+62+40+40)&&(y_player+60>144))
+     {
+         y_player=y_player+speed;
+     }
+      if((x_player>= 590-57)&&(x_player<590+57) && (y_player<144+60+40+40)&&(y_player+60>144))
+     {
+          x_player=x_player+speed;
+     }
+
+
+      if((x_player>=313 )&&(x_player<370+56) && (y_player<184+60)&&(y_player+60>184))
+     {
+       x_player=x_player-speed;
+     }
+     if((x_player>= 313)&&(x_player<370+56) && (y_player<184+60)&&(y_player+60>184))
+     {
+       y_player=y_player-speed;
+     }
+     if((x_player>= 313)&&(x_player<370+56) && (y_player<184+62)&&(y_player+60>184))
+     {
+         y_player=y_player+speed;
+     }
+      if((x_player>= 313)&&(x_player<370+57) && (y_player<184+60)&&(y_player+60>184))
+     {
+          x_player=x_player+speed;
+     }
+
+
+      if((x_player>=140-57 )&&(x_player<140+56) && (y_player<144+144)&&(y_player+60>144))
+     {
+       x_player=x_player-speed;
+     }
+     if((x_player>=140-57)&&(x_player<140+56) && (y_player<144+60)&&(y_player+60>142))
+     {
+       y_player=y_player-speed;
+     }
+     if((x_player>=140-57)&&(x_player<140+56) && (y_player<144+146)&&(y_player+60>144))
+     {
+         y_player=y_player+speed;
+     }
+      if((x_player>=140-57)&&(x_player<140+57) && (y_player<144+144)&&(y_player+60>144))
+     {
+          x_player=x_player+speed;
+     }
 
 
 
